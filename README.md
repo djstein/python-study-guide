@@ -49,7 +49,7 @@ Unordered with no duplicates
 ```python
 set = {‘apple’, ‘orange’, ‘apple’, ‘pear’}
 print(set)
-#‘apple’, ‘orange’, ‘pear’}
+# {‘apple’, ‘orange’, ‘pear’}
 ```
 
 Can do relational algebra set operations on
@@ -57,7 +57,7 @@ Can do relational algebra set operations on
 a = set(‘abracadabra’) 
 b = set(‘alacazm’)
 a - b
-#‘r’, ‘d’, ‘b’}   etc etc
+# {‘r’, ‘d’, ‘b’}   etc etc
 ```
 
 ### Dictionary 
@@ -66,7 +66,7 @@ Dictionaries in Python are key: value pairs, unordered, implemented by a hashtab
 ```python
 tel = {‘jack’: 4098, ‘sape’: 4139}
 tel[‘guido’] = 4127
-#{‘sape’: 4139, ‘guido’:4127, ‘jack’: 4098}
+# {‘sape’: 4139, ‘guido’:4127, ‘jack’: 4098}
 
 # or use constructor
 dict( [  (’sape’, 4139), (‘guido’, 4127), (‘jack’, 4098) ] )
@@ -77,7 +77,7 @@ List uses .sort() to sort data for that instance
 
 All other iterable data structures use sorted(), which returns a new sorted instance
 
-Sort and sorted call timsort at C level, average complexity of O(n log n)
+Sort and sorted call timsort at C level, average complexity of **O(n log n)**
 
 ## Usage of * and ** for Passing Arbitrary Number of Arguments
 \*: pass arbitrary number of arguments
@@ -91,12 +91,13 @@ def func(*args)
 def func(*args, **kwargs)
     . . .
 
-#— or --
+# — or --
 def func(x, y, z)
     . . .
 
 list = [1,2,3]
 function(*list)
+
 dict = [‘x’:1, ‘y’:2, ‘z’:3]
 function(**dict)
 ```
