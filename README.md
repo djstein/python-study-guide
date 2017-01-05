@@ -240,10 +240,11 @@ Start at root (or search node) and explore each neighbor before going on to any 
 ### DFS: Depth-first Search
 Start at root (or search node) and explore each branch completely before moving to the next branch
 
-
-## Interview Topics Extra
+## SQL Basics
 
 ### SQL Joins (Self, Left, Right, Outer)
+
+## Interview Topics Extra
 
 ### Data Lineage
 Data life cycle that includes the data's origins and where it moves over time. Helps tracing errors back to their sources. Allows for replaying specific portions for step debugging.
