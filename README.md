@@ -1,5 +1,5 @@
-# Python Study Guide
-Python Study Guideå
+#Study Guide
+Python Study Guide
 
 ## Python Memory Management:
 Use of private heap containing all Python objects and data structures.  User has no control, done by interpreter.
@@ -162,6 +162,8 @@ function(**dict)
 What are decorators?
 
 ## Test Driven Development
+Where tests are added prior to creation of new feature. The new test contains expected behavior of the feature to be added and should not pass until implementation of feature is correct. Ensures developers are not writingt tests bases on output of development and ensures test cases are already written, speeding up development time / addition of features later.
+
 White Box: tester knows implementation
 
 Black Box: tester does not know implementation
