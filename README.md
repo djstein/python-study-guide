@@ -240,21 +240,32 @@ Start at root (or search node) and explore each neighbor before going on to any 
 ### DFS: Depth-first Search
 Start at root (or search node) and explore each branch completely before moving to the next branch
 
+
 ## Interview Topics Extra
 
 ### SQL Joins (Self, Left, Right, Outer)
 
 ### Data Lineage
+Data life cycle that includes the data's origins and where it moves over time. Helps tracing errors back to their sources. Allows for replaying specific portions for step debugging.
 
 ### Data Dictionary (Managment)
+Centralized repository of information about data such as meaning, relationships to other data, origin, usage, and format. Storage of metadata. Can be seen with Entity Relationship Diagrams.
 
-### Data Lineage / Process Flow
+Typically read only table that provides information about the database.
+- Includes all schema objects
+- Space allocated and used by each schema
+- Default values for columns
+- Integrity constraint information
+- Users and Priviledges and roles each user has
+- Auditing info, who has access/updated schema objects
 
 ### Quartz
 
 ## Sample Interview Questions
 
 ## Questions to Ask
+What is currently the biggest development problem with the Quartz system
+
 1. In using relational databases, which type of databases are used: IBM DB2, PostgreSQL, Oracle?
 2. When doing test driven development, do the team use the Python standard libraries implementation of unit test? Or a third party library such as Nose?
 3. Do developers on this team use Windows or Unix based systems?
