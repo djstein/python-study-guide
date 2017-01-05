@@ -173,11 +173,12 @@ A class that contains abstract methods, methods that are declared but contain no
 While typically not implemented in Python, useage of standard inheritance is prefered, they can be using the Python abc modul (Abstract Base Classes: https://docs.python.org/3/library/abc.html)
 
 ```python
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 
 class Abstract(metaclass=ABCMeta):
-    def foo():
-        pass
+    @abstractmethod
+    def foo(self):
+        raise NotImplementedError('users must define foo to use this base class')
 
 class Concret(Abstract):
     def foo(self):
@@ -193,6 +194,7 @@ What are decorators?
 
 ## Multithreading
 Multithreading in Python
+Problems, deadlock, mutli read issues, etc.
 
 ## Test Driven Development
 Where tests are added prior to creation of new feature. The new test contains expected behavior of the feature to be added and should not pass until implementation of feature is correct. Ensures developers are not writingt tests bases on output of development and ensures test cases are already written, speeding up development time / addition of features later.
@@ -218,7 +220,19 @@ class WidgetTestCase(unittest.TestCase):
         self.widget.dispose()
 ```
 
-## Interview Topics
+## Interview Topics Theory
+
+### Big O
+
+
+### Linked List
+
+
+### Hash Table
+
+
+### Hash Map
+
 
 ### BFS: Breadth-first Search
 Start at root (or search node) and explore each neighbor before going on to any of their children.
@@ -226,6 +240,24 @@ Start at root (or search node) and explore each neighbor before going on to any 
 ### DFS: Depth-first Search
 Start at root (or search node) and explore each branch completely before moving to the next branch
 
-### Hash Table
+## Interview Topics Extra
 
-### Hash Map
+### SQL Joins (Self, Left, Right, Outer)
+
+### Data Lineage
+
+### Data Dictionary (Managment)
+
+### Data Lineage / Process Flow
+
+### Quartz
+
+## Interview Questions
+
+## Questions to Ask
+1. In using relational databases, which type of databases are used: IBM DB2, PostgreSQL, Oracle?
+2. When doing test driven development, do the team use the Python standard libraries implementation of unit test? Or a third party library such as Nose?
+3. Do developers on this team use Windows or Unix based systems?
+4. Do developers on this team typically use an IED such as PyCharm or work in the terminal with text editors when developing?
+5. Which source management tools does the team typically use? Github, BitBucket, GitLab?
+
