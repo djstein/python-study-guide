@@ -182,3 +182,37 @@ class WidgetTestCase(unittest.TestCase):
     def tearDown(self):
         self.widget.dispose()
 ```
+
+## Multithreading
+
+## General Topics
+
+### BFS
+
+### DFS
+
+### Hash Table
+
+### Hash Map
+
+### Enums
+
+### Abstract Classes
+A class that contains abstract methods, methods that are declared but contain no implementations. Use as structures for what methods a subclass should contain.
+While typically not implemented in Python, useage of standard inheritance is prefered, they can be using the Python abc modul (Abstract Base Classes: https://docs.python.org/3/library/abc.html)
+
+```python
+from abc import ABCMeta
+
+class Abstract(metaclass=ABCMeta):
+    def foo():
+        pass
+
+class Concret(Abstract):
+    def foo(self):
+        print('cat')
+
+con = Concret()
+con.foo()
+>>> 'cat'
+```
