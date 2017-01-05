@@ -252,7 +252,7 @@ Start at root (or search node) and explore each branch completely before moving 
 
 ### Quartz
 
-## Interview Questions
+## Sample Interview Questions
 
 ## Questions to Ask
 1. In using relational databases, which type of databases are used: IBM DB2, PostgreSQL, Oracle?
