@@ -1,18 +1,5 @@
 # Python Study Guide
-Python Study Guide
-
-## Advantages of Python
-### General
-
-###Java
-
-### C
-
-### C++
-
-### Ruby
-
-## Disadvantages of Python
+Python Study Guideå
 
 ## Python Memory Management:
 Use of private heap containing all Python objects and data structures.  User has no control, done by interpreter.
@@ -176,6 +163,7 @@ What are decorators?
 
 ## Test Driven Development
 White Box: tester knows implementation
+
 Black Box: tester does not know implementation
 
 For Python use the unittest
