@@ -170,3 +170,27 @@ function(*list)
 dict = [‘x’:1, ‘y’:2, ‘z’:3]
 function(**dict)
 ```
+
+## Decorators
+What are decorators?
+
+## Test Driven Development
+White Box: tester knows implementation
+Black Box: tester does not know implementation
+
+For Python use the unittest
+```python
+# Basic Example
+
+import unittest
+
+class WidgetTestCase(unittest.TestCase):
+    def setUp(self):
+        self.widget = Widget('The widget')
+
+    def test_default_widget_size(self):
+        self.assertEqual(self.widget.size(), (50,50), 'incorrect default size')
+
+    def tearDown(self):
+        self.widget.dispose()
+```
