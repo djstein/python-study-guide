@@ -158,48 +158,17 @@ dict = [‘x’:1, ‘y’:2, ‘z’:3]
 function(**dict)
 ```
 
-## Decorators
-What are decorators?
-
-## Test Driven Development
-Where tests are added prior to creation of new feature. The new test contains expected behavior of the feature to be added and should not pass until implementation of feature is correct. Ensures developers are not writingt tests bases on output of development and ensures test cases are already written, speeding up development time / addition of features later.
-
-White Box: tester knows implementation
-
-Black Box: tester does not know implementation
-
-For Python use the unittest
+## Enums
+Set of symbolic names (members) bound to unqiue, constant values. 
 ```python
-# Basic Example
-
-import unittest
-
-class WidgetTestCase(unittest.TestCase):
-    def setUp(self):
-        self.widget = Widget('The widget')
-
-    def test_default_widget_size(self):
-        self.assertEqual(self.widget.size(), (50,50), 'incorrect default size')
-
-    def tearDown(self):
-        self.widget.dispose()
+from enum import Enum
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
 ```
 
-## Multithreading
-
-## General Topics
-
-### BFS
-
-### DFS
-
-### Hash Table
-
-### Hash Map
-
-### Enums
-
-### Abstract Classes
+## Abstract Classes
 A class that contains abstract methods, methods that are declared but contain no implementations. Use as structures for what methods a subclass should contain.
 While typically not implemented in Python, useage of standard inheritance is prefered, they can be using the Python abc modul (Abstract Base Classes: https://docs.python.org/3/library/abc.html)
 
@@ -218,3 +187,45 @@ con = Concret()
 con.foo()
 >>> 'cat'
 ```
+
+## Decorators
+What are decorators?
+
+## Multithreading
+Multithreading in Python
+
+## Test Driven Development
+Where tests are added prior to creation of new feature. The new test contains expected behavior of the feature to be added and should not pass until implementation of feature is correct. Ensures developers are not writingt tests bases on output of development and ensures test cases are already written, speeding up development time / addition of features later.
+
+White Box: tester knows implementation
+
+Black Box: tester does not know implementation
+
+For Python use the unittest model: 
+```python
+# Basic Example
+
+import unittest
+
+class WidgetTestCase(unittest.TestCase):
+    def setUp(self):
+        self.widget = Widget('The widget')
+
+    def test_default_widget_size(self):
+        self.assertEqual(self.widget.size(), (50,50), 'incorrect default size')
+
+    def tearDown(self):
+        self.widget.dispose()
+```
+
+## Interview Topics
+
+### BFS: Breadth-first Search
+Start at root (or search node) and explore each neighbor before going on to any of their children.
+
+### DFS: Depth-first Search
+Start at root (or search node) and explore each branch completely before moving to the next branch
+
+### Hash Table
+
+### Hash Map
