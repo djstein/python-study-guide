@@ -81,7 +81,7 @@ Sort and sorted call timsort at C level, average complexity of **O(n log n)**
 
 ## Classes and Inheritance
 
-Advanced example showing:
+### Basic example showing:
 
 ```python
 class Dog():
@@ -108,6 +108,79 @@ d.kind
 e.name
 >>> 'Buddy'
 ```
+### Method Resolution Order
+The MRO algorithm handles how a class will inherit its attributes.
+
+```python
+class First(object):
+    def __init__(self):
+        super(First, self).__init__()
+        print("first")
+
+class Second(object):
+    def __init__(self):
+        super(Second, self).__init__()
+        print("second")
+
+class Third(First, Second):
+    def __init__(self):
+        super(Third, self).__init__()
+        print("that's it")
+
+x = Third()
+>>>second
+>>>first
+>>>that's it
+```
+Resolves inits as:
+__init__ is calculated below as:
+```python
+Third --> First --> object --> Second --> object
+```
+Duplicates are removed
+```python
+Third --> First --> Second --> object
+```
+Methods are then called from object back up
+
+A more complicated example showing inheritance that crosses paths is defined as:
+```python
+class First(object):
+    def __init__(self):
+        super(First, self).__init__()
+        print("first")
+
+class Second(First):
+    def __init__(self):
+        super(Second, self).__init__()
+        print("second")
+
+class Third(First):
+    def __init__(self):
+        super(Third, self).__init__()
+        print("third")
+
+class Forth(Second, Third):
+    def __init__(self):
+        super(Forth, self).__init__()
+        print("that's it")
+
+x = Forth()
+>>>first
+>>>third
+>>>second
+>>>that's it
+```
+Resolves inits as:
+__init__ is calculated below as:
+```python
+Forth --> Second --> First --> object --> Third --> First --> object
+```
+Duplicates are removed
+```python
+Forth --> Second --> Third --> First --> object
+```
+Methods are then called from left to right, super to newest child
 
 ## Star and Double Star: Usage of * and ** for Passing Arbitrary Number of Arguments
 This is used for passing arbitray number of arguments to a function.
@@ -189,13 +262,6 @@ con.foo()
 >>> 'cat'
 ```
 
-## Decorators
-What are decorators?
-
-## Multithreading
-Multithreading in Python
-Problems, deadlock, mutli read issues, etc.
-
 ## Test Driven Development
 Where tests are added prior to creation of new feature. The new test contains expected behavior of the feature to be added and should not pass until implementation of feature is correct. Ensures developers are not writingt tests bases on output of development and ensures test cases are already written, speeding up development time / addition of features later.
 
@@ -220,7 +286,34 @@ class WidgetTestCase(unittest.TestCase):
         self.widget.dispose()
 ```
 
-## Interview Topics Theory
+## Advanced Python Topics
+
+### Decorators
+What are decorators?
+
+### Multithreading
+Multithreading in Python
+Problems, deadlock, mutli read issues, etc.
+
+### Lambda Functions
+
+### List Comprehension
+
+### String Splicing Functions
+
+### Functions Passed Variables
+Are they pass by reference? 
+
+### Pickle
+
+### Range and XRange
+
+
+## Core Data Structures
+
+## Core Algorithms
+
+## Concepts
 
 ### Big O
 
@@ -279,7 +372,6 @@ RIGHT JOIN table2
 ON table1.column_name = table2.column_name;
 ```
 
-
 ## Interview Topics Extra
 
 ### Data Lineage
@@ -296,12 +388,9 @@ Typically read only table that provides information about the database.
 - Users and Priviledges and roles each user has
 - Auditing info, who has access/updated schema objects
 
-### Quartz
-
 ## Sample Interview Questions
 
 ## Questions to Ask
-What is currently the biggest development problem with the Quartz system
 
 1. In using relational databases, which type of databases are used: IBM DB2, PostgreSQL, Oracle?
 2. When doing test driven development, do the team use the Python standard libraries implementation of unit test? Or a third party library such as Nose?
